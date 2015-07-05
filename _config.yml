@@ -1,8 +1,8 @@
 # Site settings
-title: Thenextapps.com blog
+title: thenextapps.com blog
 email: thanhnam.it@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  A blog about my technical life
+  "Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young." - Henry Ford
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://thenextapps.com" # the base hostname & protocol for your site
 twitter_username: thanhnam_it
