@@ -1,0 +1,2 @@
+Run the jekyll
+	sudo bundle exec jekyll serve
