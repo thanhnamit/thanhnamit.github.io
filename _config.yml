@@ -1,9 +1,9 @@
 # Welcome to Jekyll!
 
 # Website settings
-title: Thenextapps
-description: Thenextapps.com
-keywords: thenextapps,odoo,blog,b2b,pos,integration,cloud,mobile,api
+title: TheNextApps
+description: Building next generation application
+keywords: thenextapps,odoo,blog,b2b,pos,integration,cloud,mobile,api,aws,container,docker,android,ios,kubernetes
 baseurl:  / # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
 url: http://thenextapps.com  # url should be 'http://<github_username>.github.io/homepage' as before
 # url: http://127.0.0.1:4000
@@ -14,11 +14,11 @@ author:  # change following line to your infomation.
   name: Nam Nguyen  # Be used at blog posts' author.
   first_name: Nam  # Be used at index page about me section.
   last_name: Nguyen  # Be used at index page about me section.
-  avatar: /static/assets/img/landing/avatar.jpg  # upload your avatar at directory and edit it.
-  github_username: thanhnamit  # Leave blank if you don't have now
-  linkedin_id: thanhnamit # Leave blank if you don't have now
-  facebook_username: namnt  # Leave blank if you don't have now
-  twitter_username: namnt  # Leave blank if you don't have now
+  avatar: /static/assets/img/landing/thenextapps-avatar.png  # upload your avatar at directory and edit it.
+  github_username:  # Leave blank if you don't have now
+  linkedin_id: namnt # Leave blank if you don't have now
+  facebook_username:  # Leave blank if you don't have now
+  twitter_username:  # Leave blank if you don't have now
   email: nam.nguyen@thenextapps.com  # Leave blank if you don't have now
   cv: https://www.linkedin.com/in/namnt/  # An online CV can be printed as PDF, leave blank if you don't have now
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
@@ -48,7 +48,7 @@ gio:  # if you wanna this feature, go to https://www.growingio.com/ to get your 
   # id:
 
 ## donation
-donation: on  # type 'on'/'off' to choice display donation button at post page or not
+donation: off  # type 'on'/'off' to choice display donation button at post page or not
 
 ## carousels
 index_carousel: on  # index page carousel switch
