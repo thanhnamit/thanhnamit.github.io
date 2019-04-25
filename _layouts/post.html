@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 
 {% include base_path %}
@@ -23,6 +24,8 @@ layout: default
 
           {{ content }}
         </div>
+
+        {% include disqus.html %}
 
         <div class='c-tags'>
           {% for tag in page.tags %}
