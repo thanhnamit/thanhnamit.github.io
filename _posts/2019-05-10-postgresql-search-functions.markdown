@@ -34,8 +34,8 @@ a little bit harder to solve with the simple query approach, and the outcome is 
 
 ### Enter Postgresql 
 
-There are many ways to skin a cat, i.e indexing data with Elastic Search engine and utilising its powerful full-text search capability, but this requires extra
-effort. Luckily, during my study, I have stumbled upon really cool Postgresql's function duet: `ts_tovector` and `ts_query` ([Text Search Functions and Operators](https://www.postgresql.org/docs/9.6/functions-textsearch.html)) which nicely solved my problem for the reasons that the quality of `addressLine` field is consistent and no need to update or insert records in a regular basis.
+There are many ways to skin a cat, e.g. indexing data with Elastic Search engine and utilising its powerful full-text search capability, but this requires extra
+effort. Luckily, during my study, I have stumbled upon really cool Postgresql's function duet: `ts_tovector` and `ts_query` ([Text Search Functions and Operators](https://www.postgresql.org/docs/9.6/functions-textsearch.html)) which nicely solved my problem for the reasons that the quality of `addressLine` field is consistent and no need to update or insert records on a regular basis.
 
 To use these functions:
 
@@ -43,14 +43,14 @@ To use these functions:
 select * from db where to_tsvector(addressLine) @@ to_tsquery('5 & 14 & bourke & (oakleigh | clayton) & 3166')
 ```
 <pre></pre>
-Function `to_tsvector` tokenises and normalises the field into words, and each word is a lexeme (unit of lexical meaning or root of word, e.g required -> require). The normalisation
+Function `to_tsvector` tokenises and normalises the field into words, and each word is a lexeme (unit of lexical meaning or root of word, e.g. required -> require). The normalisation
 is configurable in Postgresql.
 
 Function `to_tsquery` performs the search; with parameter in form of a query including keywords and operators such as `OR (|), AND (&), NEGATE (!)`. Keywords can be grouped in whatever way
 you like.
 
 At first glance, I was skeptical about performance of this query on my dataset, but it turned out to be quite good, around 100-300ms per 2.5 million records. It was not fast enough when
-combined with other part of the query, but a good trick is to pre-index it and store in other column. So I achieved better performance with the improved query below.
+combined with other part of the query, but a good trick is to pre-index it and store in another column. So I achieved better performance with the improved query below.
 
 ```sql
 select * from db where (address_vectorised @@ to_tsquery('95 & 305'))
