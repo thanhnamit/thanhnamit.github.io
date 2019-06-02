@@ -11,10 +11,9 @@ email:       'thanhnam.it@gmail.com'
 description: 'Minimalist'
 baseurl:     '' # The subpath of your site, e.g. /blog
 url:         'https://thenextapps.com/' # The base hostname & protocol for your site
-twitter:     ''
-github:      ''
-instagram:   ''
-facebook:    ''
+twitter:     'https://twitter.com/thanhnam_it'
+github:      'https://github.com/thanhnamit/'
+linkedin:    'https://linkedin.com/in/namnt/'
 
 markdown:  kramdown
 permalink: pretty
