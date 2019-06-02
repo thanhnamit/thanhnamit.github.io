@@ -5,7 +5,8 @@ title: "Micro rule-engine with Spring and Drools"
 tags: [springboot, oas, kotlin, drools, rule-engine, jib, docker]
 ---
 
-### TL;DR
+![Drools is cool](/images/posts/2019-05-25-drools.png 'Drools is cool')
+
 It is 2019, while every man and his dog talks about Machine Learning & AI, I have spent some time this week to play with Drools (HRS - Hybrid Reasoning system) and built an API with it. It is interesting to know that during the well-known ["AI Winter"](https://en.wikipedia.org/wiki/AI_winter), Expert systems have been quite popular commercially in Business Rules Management System (BRMS) market, namely Red Hat JBoss and IBM JRules. If you love reading more, then this is [a good start](https://docs.jboss.org/drools/release/7.22.0.Final/drools-docs/html_single/index.html#_hybridreasoningchapter).
 
 Whether such systems are useful or not is hard to say and depends on business scenarios; Martin Fowler detailed in [his blog](https://martinfowler.com/bliki/RulesEngine.html) dated in 2009 that one should keep a few things in mind when designing rule systems. I just summarise them here:
