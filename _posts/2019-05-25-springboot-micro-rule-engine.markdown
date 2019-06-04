@@ -113,7 +113,8 @@ tasks.withType<KotlinCompile> {
 // TELL GRADLE WHERE TO FIND GENERATED CODE
 sourceSets {
   main {
-    java.srcDir("${swaggerSources["api"].code.outputDir}/src/main/java")
+    java.srcDir(
+      "${swaggerSources["api"].code.outputDir}/src/main/java")
   }
 }
 
@@ -218,7 +219,7 @@ Finally containerise the app with [Google Container Jib](https://github.com/Goog
 
 `docker run --rm -it -m 512M -p 8085:8085 api-election-v1:0.0.1-SNAPSHOT`
 
-Invoke the API with sample command at `https://github.com/thanhnamit/api-election-v1/blob/master/README.md`
+Invoke the API with [sample command](https://github.com/thanhnamit/api-election-v1/blob/master/README.md).
 
 ### Conclusion
 
