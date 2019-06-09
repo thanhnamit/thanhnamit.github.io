@@ -7,3 +7,13 @@ img {
   max-width: 100%;
   font-style: italic;
 }
+
+img[src*="#headerimage"] {
+   width:250px;
+}
+
+img[src*="#bodyimage"] {
+   width: 350px;
+   padding: 1px;
+   border: 1px solid #021a40;
+}
