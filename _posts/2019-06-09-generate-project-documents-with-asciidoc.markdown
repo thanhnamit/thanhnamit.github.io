@@ -7,13 +7,13 @@ tags: [asciidoc, asciidocj, gradle, groovy, jruby, docuops]
 
 ![Header](/images/posts/2019-06-09-head.png#headerimage 'Spec')
 
-If you love Asciidoc and want to generate cool technical specs in HTML5 and RevealJS slide for technical showcase. [This gradle plugin](https://github.com/thanhnamit/docgen-gradle-plugin) can help:
+If you love Asciidoc and want to generate cool technical specs in HTML5 and RevealJS slide for technical showcase. [This gradle plugin](https://github.com/thanhnamit/docgen-gradle-plugin){:target="_blank"} can help:
 
 * Creating a sane default structure for project docos and templates
 * Generating HTML5 docos (PlantUML supported)
 * Generating RevealJS slide from Asciidoc format
 
-To work with Asciidoc, refer to this [writer's guide](https://asciidoctor.org/docs/asciidoc-writers-guide/#listing-and-source-code-blocks), and [compare Asciidoc with markdown](https://asciidoctor.org/docs/asciidoc-vs-markdown/), also [heap of projects are using Asciidoc](https://github.com/asciidoctor/asciidoctor.org/issues/270)
+To work with Asciidoc, refer to this [writer's guide](https://asciidoctor.org/docs/asciidoc-writers-guide/#listing-and-source-code-blocks){:target="_blank"}, and [compare Asciidoc with markdown](https://asciidoctor.org/docs/asciidoc-vs-markdown/){:target="_blank"}, also [heap of projects are using Asciidoc](https://github.com/asciidoctor/asciidoctor.org/issues/270){:target="_blank"}
 
 ## Examples
 

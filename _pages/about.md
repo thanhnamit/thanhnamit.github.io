@@ -4,4 +4,9 @@ title: About
 image: '/images/pages/about.jpeg'
 ---
 
-Express my thoughts on software development, career and bring together meaningful conversations.
+## Hi, I'm Nam Nguyen
+
+I am a software developer & Vietnamese immigrant living in Melbourne, Australia. Besides my family and two lovely kids, 
+I enjoy coding, reading, blogging and occasionally photography (my flickr is [namnt](https://www.flickr.com/photos/namnt){:target="_blank"}).  
+
+
