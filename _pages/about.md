@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-image: '/images/pages/about.jpeg'
+image: '/images/pages/about.jpg'
 ---
 
 ## Hi, I'm Nam Nguyen
