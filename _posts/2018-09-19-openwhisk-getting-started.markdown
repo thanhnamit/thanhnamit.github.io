@@ -14,7 +14,7 @@ Openwhisk was created by IBM researchers and has gained significant community in
 ### Lucky book store problem
 Lucky bookstore wants to revamp their e-commerce presence prior to Xmas to handle increasing order volume. The main requirement is to reimplement their website and other backend components such as loyalty and inventory services so the business can provide timely communication to their loyal customers while cutting infrastructure cost. The new IT architects mandate that they want to completely rebuild their monolith stack to replace with microservices and APIs. After a lot of spike meetings, we end up with the new architecture built on Openwhisk FaaS platform.
 
-![New design](/images/posts/2018-10-19-openwhisk-design.png 'Design')
+![New design](/images/posts/2018-10-19-openwhisk-design.png 'Design'){: .center-image }
 
 This design has following components:
 

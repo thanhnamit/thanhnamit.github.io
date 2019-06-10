@@ -5,7 +5,7 @@ title: "DocuOps with Asciidoc & Gradle plugin"
 tags: [asciidoc, asciidocj, gradle, groovy, jruby, docuops]
 ---
 
-![Header](/images/posts/2019-06-09-head.png#headerimage 'Spec')
+![Header](/images/posts/2019-06-09-head.png#headerimage 'Spec'){: .center-image }
 
 If you love Asciidoc and want to generate cool technical specs in HTML5 and RevealJS slide for technical showcase. [This gradle plugin](https://github.com/thanhnamit/docgen-gradle-plugin){:target="_blank"} can help:
 
@@ -18,10 +18,10 @@ To work with Asciidoc, refer to this [writer's guide](https://asciidoctor.org/do
 ## Examples
 
 *Tech spec*
-![Spec](/images/posts/2019-06-09-spec.png#bodyimage 'Spec')
+![Spec](/images/posts/2019-06-09-spec.png#bodyimage 'Spec'){: .center-image }
 
 *RevealJS slideshow*
-![Spec](/images/posts/2019-06-09-slide.png#bodyimage 'Spec')
+![Spec](/images/posts/2019-06-09-slide.png#bodyimage 'Spec'){: .center-image }
 
 ## Build
 This plugin is not available in gradle plugin portal. You can build and push to local or private repositories, for example:
@@ -56,11 +56,11 @@ docGen {
 ## Usage 
 This plugin has three tasks under `documentation` group:
 
-`docGenDirTemplate` - generate sensible opinionated document structure with template files (README.adoc, LICENSE, CONTRIBUTING.adoc, CHANGELOG.adoc)
+`docGenDirTemplate` - generate sensible opinionated document structure with template files (README.adoc, LICENSE, CONTRIBUTING.adoc, CHANGELOG.adoc). 
 
-`docGenHtml` - generate formated html5 from .adoc file under `docs/asciidoc/specification`
+`docGenHtml` - generate formated html5 from .adoc file under `docs/asciidoc/specification`. Note this path is created by the previous task.
 
-`docGenSlide` - generate RevealJS presentation from .adoc file under `docs/asciidoc/presentation`
+`docGenSlide` - generate RevealJS presentation from .adoc file under `docs/asciidoc/presentation`.
 
 Enjoy Asciidoc! :feet:
 

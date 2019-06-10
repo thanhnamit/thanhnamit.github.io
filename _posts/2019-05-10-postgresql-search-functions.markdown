@@ -5,7 +5,7 @@ title: "Postgresql text search functions"
 tags: [postgresql, apis]
 ---
 
-![Postgresql cool](/images/posts/2019-05-10-postgresql.png 'Postgresql cool')
+![Postgresql cool](/images/posts/2019-05-10-postgresql.png 'Postgresql cool'){: .center-image }
 
 In one of my current projects, I built a search API backed by a relational database with the dataset size of 2.5 million address records.
 the API is supposed to return a list of matching addresses given address details such as house number, street name, postcode, etc. If there is a single
