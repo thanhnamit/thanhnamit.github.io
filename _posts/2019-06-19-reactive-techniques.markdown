@@ -19,7 +19,7 @@ with Spring Webflux and Reactor framework.
 
 Spring Webflux provides a number of non-blocking connectors such as Reactive MongoDB (NoSQL)
 or WebClient to deal with HTTP calls. When it is required to handle communications with blocking
-services, Reactor provides Scheduler component to create dedicated thread pools. Imagine
+services, Reactor also offers Scheduler component to create dedicated thread pools. Imagine
 you have an existing blocking JPA repository.
 
 ```java
@@ -53,8 +53,7 @@ class ReactiveTweetRepositoryAdapter(
 When a stream consumer subscribes to `getTweetById` method and starts the subscription by invoking `subscribe()`, 
 the execution of the block `fromCallable` happens under the new thread scheduler `jdbcScheduler`. 
 The method `subscribeOn(jdbcScheduler)` specifies the way threads are created and managed while executing 
-the blocking code. Because accessing database is I/O intensive operation, the elastic thread pool is the suitable scheduler type.
-However, when the operation is CPU bound, fixed size thread pool or `parallel()` is the good choice.
+the blocking code. Because accessing database is I/O intensive operation, the elastic thread pool is the suitable scheduler type. However, when the operation is CPU bound, fixed size thread pool or `parallel()` is a good choice.
 
 <p/>
 **Important**: do not wrap a blocking call in Mono or Flux like `Mono.just(invokeBlockingCall())`
@@ -64,9 +63,9 @@ has subscribed on. Always think of Scheduler when dealing with blocking calls.
 ## Scatter gather 
 
 When an event needs to be routed to multiple recipients for processing, Reactor's `zip`
-operator allows the stream consumer subscribes to multiple upstreams and wait for all subscribers
+operator allows the stream consumer to subscribe to multiple upstreams and wait for all publishers
 to emit output events. The output events are combined into `tuple` data type, which can be 
-extracted later. Let say we have two non blocking services:
+extracted later. Let say we have two async services:
 
 ```java
 interface NonBlockingTweetService {
