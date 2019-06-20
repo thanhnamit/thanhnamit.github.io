@@ -54,7 +54,7 @@ When a stream consumer subscribes to `getTweetById` method and starts the subscr
 the execution of the block `fromCallable` happens under the new thread scheduler `jdbcScheduler`. 
 The method `subscribeOn(jdbcScheduler)` specifies the way threads are created and managed while executing 
 the blocking code. Because accessing database is I/O intensive operation, the elastic thread pool is the suitable scheduler type.
-Otherwise, if the blocking operation is CPU intensive, fixed size thread pool is the choice.
+However, when the operation is CPU bound, fixed size thread pool or `parallel()` is the good choice.
 
 <p/>
 **Important**: do not wrap a blocking call in Mono or Flux like `Mono.just(invokeBlockingCall())`
