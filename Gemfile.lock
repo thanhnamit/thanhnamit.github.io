@@ -81,11 +81,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 2.0.1)
+  bundler (~> 2.0.2)
   jekyll (~> 3.8.5)
   jekyll-paginate
   jekyll-tagging
   jemoji
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
