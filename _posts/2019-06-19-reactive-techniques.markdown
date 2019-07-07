@@ -13,7 +13,44 @@ with Spring Webflux and Reactor framework.
 1. TOC 
 {:toc} 
 
+## Reading disposable resource with Flux.using
 
+The method `Flux.using`, which is a factory method, supports creation of a stream from a disposable
+resource. It is a reactive style of `try-with-resources` from Java 7. The example below illustrates
+how to read a file into a Flux of string and automatically close the file resource handler.
+
+```java
+val streamOfLines = Files.lines(Path.of(DefaultResourceLoader().getResource("test.txt").uri));
+
+Flux.using<String, Stream<String>>(
+	{ streamOfLines },
+	{ s: Stream<String> -> Flux.fromStream(s) },
+	BaseStream<String, Stream<String>>::close
+).delayElements(Duration.ofSeconds(1)).doOnNext { t ->
+	println(t)
+}.subscribe()
+```
+
+<p/>
+The `Flux.using` method accepts three parameters:
+- Callable resource supplier: in this case is a Supplier of `Stream<String>`
+- Function to transform to Flux: transform `Stream<String>` to `Flux<String>`
+- Resource cleanup as a Consumer: invoke close() on the stream
+
+<p/>
+
+When dealing with bytes level, Spring core introduces a new abstraction called
+`DataBuffer` and a convenient utility `DataBufferUtils`, so reading a buffer of 512 bytes 
+into a `Flux<DataBuffer>` could be simply done by:
+
+```java
+val fluxOfBuffer: Flux<DataBuffer> = DataBufferUtils.read(
+	DefaultResourceLoader().getResource("test.txt"),
+	DefaultDataBufferFactory(),
+	512
+)
+```
+<p/>
 
 ## Adapt blocking to non-blocking
 
