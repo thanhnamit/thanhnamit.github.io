@@ -13,6 +13,48 @@ with Spring Webflux and Reactor framework.
 1. TOC 
 {:toc} 
 
+## Lightweight APIs with Webflux
+
+REST API developed with Springboot often takes few seconds to bootstrap the server and load
+all dependencies. This is not ideal for tiny services which require less than 1-2 seconds of
+startup time to be able to serve requests. With Spring Webflux, the ability to create a lean and fast
+http service without loading in the whole Spring framework make it suitable for use cases:
+- Run Java REST API in AWS Lambda or FaaS
+- Utility services such as password encoder, encryption...
+
+Only one dependency is required:
+
+`org.springframework.boot:spring-boot-starter-webflux`
+
+In this trivial example below, the utility API encodes request body into base64 string. This application's
+startup time is less than 1 second.
+
+```java
+fun main(args: Array<String>) {
+	val httpHandler = RouterFunctions.toHttpHandler(routes())
+	HttpServer.create()
+			.port(8085)
+			.handle(ReactorHttpHandlerAdapter(httpHandler))
+			.bind()
+			.flatMap(DisposableChannel::onDispose)
+			.block()
+}
+
+fun routes(): RouterFunction<ServerResponse> {
+	return RouterFunctions.route(
+		RequestPredicates.POST("/base64"),
+		HandlerFunction {
+			it.bodyToMono(String::class.java)
+				.map { t -> Base64.getEncoder().encodeToString(t.toByteArray()) }
+				.flatMap { t ->
+					ServerResponse.ok().body(t)
+				}
+		}
+	)
+}
+```
+<p/>
+
 ## Reading disposable resource with Flux.using
 
 The method `Flux.using`, which is a factory method, supports creation of a stream from a disposable
